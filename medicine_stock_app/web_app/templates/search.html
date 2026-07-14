@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2>Search Medicine</h2>
+
+    <form method="POST" class="search-form">
+        <input type="text" name="keyword" placeholder="Search by name, generic, company, category" value="{{ keyword }}" required>
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<div class="card">
+    <h2>Search Result</h2>
+
+    {% if medicines %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Generic</th>
+            <th>Company</th>
+            <th>Category</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Expiry</th>
+            <th>Action</th>
+        </tr>
+
+        {% for medicine in medicines %}
+        <tr>
+            <td>{{ medicine.name }}</td>
+            <td>{{ medicine.generic }}</td>
+            <td>{{ medicine.company }}</td>
+            <td>{{ medicine.category }}</td>
+            <td>{{ medicine.quantity }}</td>
+            <td>{{ medicine.price }}</td>
+            <td>{{ medicine.expiry_date }}</td>
+            <td>
+                <a class="small-btn" href="/edit/{{ medicine._id }}">Edit</a>
+                <a class="small-btn danger" href="/delete/{{ medicine._id }}" onclick="return confirm('Delete this medicine?')">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% else %}
+        <p>No result found.</p>
+    {% endif %}
+</div>
+{% endblock %}

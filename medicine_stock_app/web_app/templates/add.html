@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Add Medicine</h2>
+    <form method="POST">
+        <label>Medicine Name</label>
+        <input type="text" name="name" required>
+        <label>Generic Name</label>
+        <input type="text" name="generic" required>
+        <label>Company</label>
+        <input type="text" name="company" required>
+        <label>Category</label>
+        <input type="text" name="category" placeholder="Tablet / Syrup / Capsule" required>
+        <label>Quantity</label>
+        <input type="number" name="quantity" required>
+        <label>Price</label>
+        <input type="number" step="0.01" name="price" required>
+        <label>Expiry Date</label>
+        <input type="date" name="expiry_date" required>
+        <label>Description</label>
+        <textarea name="description"></textarea>
+        <button type="submit">Save Medicine</button>
+    </form>
+</div>
+{% endblock %}

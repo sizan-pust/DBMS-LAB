@@ -1,0 +1,40 @@
+{% if medicines %}
+<div class="table-wrapper">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Generic</th>
+            <th>Company</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Expiry Date</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+
+        {% for medicine in medicines %}
+        <tr>
+            <td>{{ medicine.name }}</td>
+            <td>{{ medicine.generic }}</td>
+            <td>{{ medicine.company }}</td>
+            <td>{{ medicine.category }}</td>
+            <td>{{ medicine.quantity }}</td>
+            <td>{{ "%.2f"|format(medicine.price) }}</td>
+            <td>{{ medicine.expiry_date }}</td>
+            <td>{{ medicine.get('description', '') }}</td>
+            <td>
+                <a href="/?page=edit&id={{ medicine._id }}">Edit</a>
+                <form method="POST" class="inline-form" onsubmit="return confirm('Delete this medicine?');">
+                    <input type="hidden" name="action" value="delete">
+                    <input type="hidden" name="medicine_id" value="{{ medicine._id }}">
+                    <button class="delete-btn" type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% else %}
+<p>No medicine found.</p>
+{% endif %}

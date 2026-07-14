@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f5f7;
+}
+.card {
+    width: 85%;
+    margin: 25px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #cccccc;
+}
+label {
+    font-weight: bold;
+}
+.center {
+    text-align: center;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+.btn {
+    background: #176b87;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 5px;
+    display: inline-block;
+    font-weight: bold;
+}
+form {
+    display: grid;
+    gap: 10px;
+}
+input,
+textarea {
+    padding: 10px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+button {
+    padding: 10px;
+    background: #176b87;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.delete-btn {
+    background: #d9534f;
+    padding: 6px 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th {
+    background: #176b87;
+    color: white;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    text-align: center;
+}
+td a {
+    color: #176b87;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 8px;
+}

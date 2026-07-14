@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+<h2>Edit Medicine</h2>
+ <form method="POST">
+<label>Medicine Name</label>
+<input type="text" name="name" value="{{ medicine.name }}" required>
+<label>Generic Name</label>
+<input type="text" name="generic" value="{{ medicine.generic }}" required>
+<label>Company</label>
+<input type="text" name="company" value="{{ medicine.company }}" required>
+<label>Category</label>
+<input type="text" name="category" value="{{ medicine.category }}" required>
+<label>Quantity</label>
+<input type="number" name="quantity" value="{{ medicine.quantity }}" required>
+<label>Price</label>
+<input type="number" step="0.01" name="price" value="{{ medicine.price }}" required>
+<label>Expiry Date</label>
+<input type="date" name="expiry_date" value="{{ medicine.expiry_date }}" required>
+<label>Description</label>
+<textarea name="description">{{ medicine.description }}</textarea>
+<button type="submit">Update Medicine</button>
+</form>
+</div>
+{% endblock %}
